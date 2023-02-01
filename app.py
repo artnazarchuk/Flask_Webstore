@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///store.db'
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
@@ -19,6 +19,10 @@ class Item(db.Model):
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/create')
+def create():
+    return render_template('create.html')
 
 @app.route('/about')
 def about():

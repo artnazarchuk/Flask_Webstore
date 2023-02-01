@@ -49,6 +49,10 @@ body {
     font-weight: 600;
 }
 /*-------КОНТЕНТ---------------------------------------------------*/
+.content {
+
+}
+
 .category {
     display: flex;
     flex-wrap: wrap;
@@ -60,6 +64,69 @@ body {
     width: 280px;
     outline: 1px solid black;
 }
+
+.form_create {
+    padding-top: 100px;
+    max-width: 600px;
+}
+@media (max-width: 1110px) {
+    .form_create {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.text_input {
+    font-size: 20px;
+    display: block;
+    line-height: 1.5;
+    padding-left: 10px;
+    font-family: Montserrat;
+    appearance: none;
+    margin-bottom: 10px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.text textarea {
+    font-family: Montserrat;
+    font-size: 20px;
+    display: block;
+    line-height: 1.5;
+    padding-left: 10px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+.text textarea:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.button {
+    background: #ff7b47;
+    border-radius: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.2px;
+    color: white;
+    padding: 5px 50px;
+    min-height: 50px;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 10px 0px;
+    transition: .4s;
+    max-width: 200px;
+    border: none;
+}
+.button:hover{
+    background: #ee6a36;
+    transition: .4s;
+}
+
 /*-------БУРГЕР---------------------------------------------------*/
 @media (max-width: 768px) {
         #menu__toggle {
