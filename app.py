@@ -1,8 +1,20 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///store.db'
+db = SQLAlchemy()
+
+class Item(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    category = db.Column(db.String(30), nullable=False)
+    product = db.Column(db.String(50), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    description = db.Column(db.Text, nullable=True)
+    created_on = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_on = db.Column(db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow)
+    isActive = db.Column(db.Boolean, default=True)
 
 @app.route('/')
 def index():
