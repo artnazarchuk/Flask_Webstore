@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -16,13 +16,30 @@ class Item(db.Model):
     updated_on = db.Column(db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow)
     isActive = db.Column(db.Boolean, default=True)
 
+    def __repr__(self):
+        return self.id
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/create')
+@app.route('/create', methods=['POST', 'GET'])
 def create():
-    return render_template('create.html')
+    if request.method == 'POST':
+        category = request.form['category']
+        product = request.form['product']
+        price = request.form['price']
+        description = request.form['description']
+        isActive = bool(request.form.get('isActive'))
+        product_create = Item(category=category, product=product, price=price, description=description, isActive=isActive)
+        try:
+            db.session.add(product_create)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'При добавлении товара произошла ошибка'
+    else:
+        return render_template('create.html')
 
 @app.route('/about')
 def about():

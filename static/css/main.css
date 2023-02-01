@@ -121,6 +121,7 @@ body {
     transition: .4s;
     max-width: 200px;
     border: none;
+    cursor: pointer;
 }
 .button:hover{
     background: #ee6a36;

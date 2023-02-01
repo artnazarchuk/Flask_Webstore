@@ -10,9 +10,9 @@
         <form method="post" class="form">
             <input type="text" name="category" id="category" placeholder="Название категории" class="text_input">
             <input type="text" name="product" id="product" placeholder="Название продукта" class="text_input">
-            <input type="number" name="price" id="price" placeholder="Цена" class="text_input">
-            <textarea name="description" id="description" cols="30" rows="3" placeholder="Описание статьи"></textarea>
-            <input type="checkbox" name="isActive" id="isActive" checked>
+            <input type="number" step="0.01" name="price" id="price" placeholder="Цена" class="text_input">
+            <textarea name="description" id="description" cols="30" rows="3" placeholder="Описание товара"></textarea>
+            <div><input type="checkbox" name="isActive" id="isActive" checked><span>Есть на складе</span></div>
             <input type="submit" value="Добавить" class="button">
         </form>
     </div>
