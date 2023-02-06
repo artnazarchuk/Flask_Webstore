@@ -17,11 +17,17 @@ class Item(db.Model):
     isActive = db.Column(db.Boolean, default=True)
 
     def __repr__(self):
-        return self.id
+        return self.category
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    categories = Item.query.order_by(Item.category).all()
+    return render_template('index.html', data=categories)
+
+@app.route('/products')
+def products():
+    products = Item.query.order_by(Item.category).all()
+    return render_template('products.html', data=products)
 
 @app.route('/create', methods=['POST', 'GET'])
 def create():

@@ -6,32 +6,11 @@
 
 {% block content %}
     <div class="category">
-        <div class="image">
-            <img src="" alt="">
-        </div>
-        <div class="image">
-            <img src="" alt="">
-        </div>
-        <div class="image">
-            <img src="" alt="">
-        </div>
-        <div class="image">
-            <img src="" alt="">
-        </div>
-        <div class="image">
-            <img src="" alt="">
-        </div>
-        <div class="image">
-            <img src="" alt="">
-        </div>
-        <div class="image">
-            <img src="" alt="">
-        </div>
-        <div class="image">
-            <img src="" alt="">
-        </div>
-        <div class="image">
-            <img src="" alt="">
-        </div>
+         {% for elem in data %}
+            <div class="image">
+                {{ elem.category }}
+                <img src="" alt="">
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
