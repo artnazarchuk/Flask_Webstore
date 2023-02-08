@@ -6,11 +6,15 @@
 
 {% block content %}
     <div class="category">
-         {% for elem in data %}
-            <div class="image">
-                {{ elem.category }}
-                <img src="" alt="">
-            </div>
-        {% endfor %}
+        {% if data %}
+            {% for elem in data %}
+                <div class="image">
+                    <a href="/category_products/{{elem.id}}">{{ elem.category }}</a>
+                    <img src="" alt="">
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1>Данных категорий нет</h1>
+        {% endif %}
     </div>
 {% endblock %}

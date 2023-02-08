@@ -6,18 +6,23 @@
 
 {% block content %}
     <div class="category">
-         {% for elem in data %}
-            <div class="image">
-                <p>{{ elem.product }}</p>
-                <p>{{ elem.price }}</p>
-                <p>{{ elem.description }}</p>
-                {% if elem.isActive %}
-                    <p>Есть на складе</p>
-                {% else %}
-                    <p>Нет на складе</p>
-                {% endif %}
-                <img src="" alt="">
-            </div>
-        {% endfor %}
+        {% if data %}
+            {% for elem in data %}
+                <div class="image">
+                    <p>{{ elem.product }}</p>
+                    <p>{{ elem.price }}</p>
+                    <p>{{ elem.description }}</p>
+                    {% if elem.isActive %}
+                        <p>Есть на складе</p>
+                    {% else %}
+                        <p>Нет на складе</p>
+                    {% endif %}
+                    <p>{{ elem.category_id }}</p>
+                    <img src="" alt="">
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1>Данных товаров нет</h1>
+        {% endif %}
     </div>
 {% endblock %}
