@@ -6,13 +6,15 @@
 
 {% block content %}
     <div class="form_create text">
-        <h1>Добавление Категории</h1>
-        <form method="post" id="form1" class="form">
+        <h1>Добавление категории</h1>
+
+        <form  method="post" enctype="multipart/form-data" class="form">
             <input type="text" name="category_create" id="category_create" placeholder="Название категории" class="text_input">
+            <input type="file" name="image">
             <input type="submit" value="Добавить" class="button">
         </form>
         <h1>Добавление товара</h1>
-        <form method="post" id="form2" class="form">
+        <form method="post" enctype="multipart/form-data" class="form">
             <select name="category" id="category" class="text_input">
                 <option>Выбрать категорию</option>
                 {% for elem in data %}
@@ -20,6 +22,7 @@
                 {% endfor %}
             </select>
             <input type="text" name="product" id="product" placeholder="Название продукта" class="text_input">
+            <input type="file" name="file"> <br>
             <input type="number" step="0.01" name="price" id="price" placeholder="Цена" class="text_input">
             <textarea name="description" id="description" cols="30" rows="3" placeholder="Описание товара"></textarea>
             <div><input type="checkbox" name="isActive" id="isActive" checked><span>Есть на складе</span></div>

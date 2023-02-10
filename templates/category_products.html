@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}
+    {{category_name.category}}
 {% endblock %}
 
 {% block content %}
+
     <div class="category">
         {% for elem in data %}
             <div class="image">
