@@ -8,18 +8,19 @@
     <div class="category">
         {% if data %}
             {% for elem in data %}
-                <div class="image">
+                <div class="product">
+                    <img src="/static/image/{{ elem.image }}" alt="Картинка">
                     <p>{{ elem.product }}</p>
-                    <p>{{ elem.price }}</p>
+                    <p>Цена: {{ elem.price }}</p>
                     <p>{{ elem.description }}</p>
                     {% if elem.isActive %}
                         <p>Есть на складе</p>
                     {% else %}
                         <p>Нет на складе</p>
                     {% endif %}
-                    <p>{{ elem.category_id }}</p>
-                    <img src="" alt="">
+                    <a href="" class="button">Купить</a>
                 </div>
+                
             {% endfor %}
         {% else %}
             <h1>Данных товаров нет</h1>

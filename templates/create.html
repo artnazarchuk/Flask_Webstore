@@ -8,11 +8,20 @@
     <div class="form_create text">
         <h1>Добавление категории</h1>
 
+
         <form  method="post" enctype="multipart/form-data" class="form">
             <input type="text" name="category_create" id="category_create" placeholder="Название категории" class="text_input">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <input type="file" name="image">
             <input type="submit" value="Добавить" class="button">
         </form>
+
         <h1>Добавление товара</h1>
         <form method="post" enctype="multipart/form-data" class="form">
             <select name="category" id="category" class="text_input">
@@ -22,7 +31,14 @@
                 {% endfor %}
             </select>
             <input type="text" name="product" id="product" placeholder="Название продукта" class="text_input">
-            <input type="file" name="file"> <br>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <input type="file" name="image"> <br>
             <input type="number" step="0.01" name="price" id="price" placeholder="Цена" class="text_input">
             <textarea name="description" id="description" cols="30" rows="3" placeholder="Описание товара"></textarea>
             <div><input type="checkbox" name="isActive" id="isActive" checked><span>Есть на складе</span></div>

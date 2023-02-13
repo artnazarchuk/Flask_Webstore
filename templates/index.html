@@ -9,8 +9,11 @@
         {% if data %}
             {% for elem in data %}
                 <div class="image">
-                    <a href="/category_products/{{elem.id}}">{{ elem.category }}</a>
-                    <img src="" alt="">
+                    <a href="/category_products/{{elem.id}}" class="image_a">
+                        <img src="static/image/{{ elem.image }}" alt="Картинка">
+                        <p class="card_text">{{ elem.category }}</p>
+                    </a>
+
                 </div>
             {% endfor %}
         {% else %}

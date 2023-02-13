@@ -28,6 +28,12 @@ body {
     font-weight: 700;
     font-size: 24px;
     text-decoration: none;
+    color: #333;
+    transition: .4s;
+}
+.logo:hover{
+    transition: .4s;
+    opacity: 0.6;
 }
 @media (max-width: 1110px) {
     .logo {
@@ -45,12 +51,18 @@ body {
 
 .menu__item {
     text-decoration: none;
+    color: #333;
     margin: 10px;
     font-weight: 600;
+    transition: .4s;
+}
+.menu__item:hover{
+    transition: .4s;
+    opacity: 0.6;
 }
 /*-------КОНТЕНТ---------------------------------------------------*/
 .content {
-
+    padding-top: 50px;
 }
 
 .category {
@@ -60,13 +72,44 @@ body {
 }
 
 .image {
+    margin: 30px;
     height: 280px;
     width: 280px;
-    outline: 1px solid black;
+    border-radius: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: #ff7b47;
+    transition: .4s;
+}
+.image:hover{
+    background: #ee6a36;
+    transition: .4s;
+    opacity: 0.6;
+}
+
+img {
+    width: 100%;
+    height: 186px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.image_a {
+    display: block;
+    height: 100%;
+    text-align:center;
+    text-decoration: none;
+
+}
+
+.card_text {
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
 }
 
 .form_create {
-    padding-top: 100px;
+    padding-top: 30px;
     max-width: 600px;
 }
 @media (max-width: 1110px) {
@@ -128,6 +171,29 @@ body {
     transition: .4s;
 }
 
+.feedback__file {
+  display: none;
+}
+
+.product {
+    width: 280px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background: #99a0a31c;
+    margin: 30px;
+}
+
+.product > p {
+    padding-left: 10px;
+}
+.product > a {
+    text-decoration: none;
+    margin: 20px;
+}
+
+
 /*-------БУРГЕР---------------------------------------------------*/
 @media (max-width: 768px) {
         #menu__toggle {
@@ -187,7 +253,7 @@ body {
     .menu__item {
         display: block;
         padding: 12px 24px;
-        color: #333;
+
         font-size: 20px;
         font-weight: 600;
         text-decoration: none;
